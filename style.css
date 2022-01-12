@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+body{
+    background-color: #E5E5E5;
+    font-family: 'Poppins', sans-serif;
+    margin:0 5em;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:1em;
+    padding:1em;
+    border-bottom: 2px solid #11111A;
+}
+#logo{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+#new-note{
+    padding:1em;
+    background-color: #33EE33;
+    color: white;
+    font-weight: bold;
+    border-radius: 1em;
+    cursor: pointer;
+    transition: 200ms all;
+}
+#new-note i{
+    margin-right: 0.5em;
+}
+#new-note:active{
+    transform: translateY(0.2em);
+}
+#new-note:hover{
+    background-color: whitesmoke;
+    color: #33EE33;
+}
+main{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding:1em;
+}
+.note-card{
+    min-height: 30vh;
+    width: 30em;
+    background-color: #FFFF00;
+    border-radius: 0.5em;
+    margin:1em 0.5em;
+}
+.header{
+    text-align: right;
+    background-color: #33EE33;
+    padding:0.5em
+}
+.header i{
+    font-size: 1.3em;
+    margin:0 0.5em;
+    cursor: pointer;
+}
+.title-area{
+    border-bottom: 1px dashed #11111A;
+    height: 5vh;
+}
+input,.title{
+    width: 100%;
+    height: 100%;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    padding:0.5em;
+    border: none;
+    background-color: transparent;
+}
+textarea,.note{
+    width: 100%;
+    min-height: 20vh;
+    resize: vertical;
+    background-color: transparent;
+    padding:1em;
+    border:none;
+    font-size: 1.4em;
+}
+.note{
+    word-wrap: break-word;
+}
+.hidden{
+    display: none;
+}
