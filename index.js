@@ -81,3 +81,15 @@ function saveNotes() {
     })
     localStorage.setItem('notesArray', JSON.stringify(notesArray))
 }
+
+//Github
+const icon = document.querySelector('.fa-github')
+const profile = document.querySelector('#github>p')
+icon.addEventListener('mouseenter',()=>{
+    profile.classList.toggle('profile-hide')
+    
+})
+icon.addEventListener('mouseleave',()=>{
+    profile.classList.toggle('profile-hide')
+    
+})
