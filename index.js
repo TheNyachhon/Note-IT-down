@@ -69,7 +69,6 @@ function edit(e) {
 // Local storage
 function saveNotes() {
     const allNotes = document.querySelectorAll('.note-card')
-    
     const notesArray = []
     allNotes.forEach(note => {
         const title = note.querySelector('.title').innerText
@@ -85,11 +84,44 @@ function saveNotes() {
 //Github
 const icon = document.querySelector('.fa-github')
 const profile = document.querySelector('#github>p')
-icon.addEventListener('mouseenter',()=>{
+icon.addEventListener('mouseenter', () => {
     profile.classList.toggle('profile-hide')
-    
 })
-icon.addEventListener('mouseleave',()=>{
+icon.addEventListener('mouseleave', () => {
     profile.classList.toggle('profile-hide')
-    
+})
+
+// Help
+const helpIcon = document.querySelector('.fa-question-circle')
+const helpText = document.querySelector('#help>p')
+helpIcon.addEventListener('mouseenter', () => {
+    helpText.classList.toggle('profile-hide')
+})
+helpIcon.addEventListener('mouseleave', () => {
+    helpText.classList.toggle('profile-hide')
+})
+//Help container
+const helpBox = document.querySelectorAll('.help-container')
+helpIcon.addEventListener('click', () => {
+    if (helpBox[0].classList.contains('hidden')) {
+        console.log()
+        //rotate icon
+        helpIcon.classList.toggle('open')
+        //open container
+        helpBox[1].classList.toggle('help-hidden')
+        console.log(helpBox[0].classList)
+        setTimeout(() => {
+            helpBox[0].classList.toggle('hidden')
+            helpBox[1].classList.toggle('hidden')
+        }, 400);
+    }else{
+        //rotate icon
+        helpIcon.classList.toggle('open')
+        //close container
+        helpBox[1].classList.toggle('hidden')
+        helpBox[0].classList.toggle('hidden')
+        setTimeout(() => {
+            helpBox[1].classList.toggle('help-hidden')    
+        }, 1);
+    }
 })

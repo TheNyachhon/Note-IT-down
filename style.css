@@ -118,14 +118,76 @@ textarea,.note{
     font-size: 1.2em;
 }
 .hidden{
-    display: none;
+    display: none !important;
 }
-#github{
+/*  */
+#help, #github{
     position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+/* Help / How to use */
+#help{
+    bottom:2.5%;
+    left:2.5%;
+    cursor: pointer;
+}
+#help i{
+    font-size:3em;
+    transition: 1s transform;
+}
+#help i:hover{
+    color: #52B69A;
+}
+.open{
+    transform: rotate(720deg);
+}
+.help-container{
+    position:fixed;
+    bottom: 8%;
+    left:5%;
+    width: 50%;
+    padding:1em;
+    border-radius: 1em;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    word-wrap: break-word;
+    /* glass morphism */
+    background-color: #52B69A55;
+    backdrop-filter: blur(12px) saturate(160%);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+    transition: 500ms all;
+}
+.help-container ul{
+    padding: 1em;
+}
+.help-container ul li{
+    line-height: 2;
+}
+.help-container ul p{
+    margin-top:1em;
+    text-align: center;
+    font-weight: 500;
+}
+.help-container ul p:last-child{
+    color: red;
+}
+.help-hidden{
+    visibility: none;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.red{
+    color:red;
+}
+/* Github link */
+#github{
     bottom:2.5%;
     right:2.5%;
 }
@@ -144,7 +206,7 @@ a{
     background-color: #11111A;
     color: #f1faee;
 }
-#github p{
+#github p, #help p{
     background-color: #11111A;
     color: white;
     padding:0.2em;
@@ -155,13 +217,25 @@ a{
 .profile-hide{
     visibility: hidden;
 }
+@media(max-width:1620px){
+    .note-card{
+        width: 25em;
+    }
+
+}
 @media(max-width:1200px){
     body{
         margin:0 1em;
     }
+    .help-container{
+        height: 60%;
+    }
 }
 
 @media(max-width:1000px){
+    .note-card{
+        width: 28em;
+    }
     #logo img{
         width: 2.5em;
     }
@@ -173,6 +247,10 @@ a{
     }
     textarea,.note{
         font-size: 1em;
+    }
+    .help-container{
+        height: 70%;
+        width: 80%;
     }
 }
 @media(max-width:450px){
@@ -190,6 +268,10 @@ a{
     }
     .header i{
         font-size: 1em;
+    }
+    .help-container{
+        height: 90%;
+        width: 90%;
     }
 }
 
