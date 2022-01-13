@@ -21,9 +21,12 @@ function addNewNote() {
     </div>`
     main.appendChild(noteCard)
 }
-function deleteNote(e){
-    const noteCard = e.parentElement.parentElement;
-    noteCard.remove()  
+function deleteNote(e) {
+    const confirmDel = confirm("Delete note?")
+    if (confirmDel) {
+        const noteCard = e.parentElement.parentElement;
+        noteCard.remove()
+    }
 }
 function edit(e) {
     const noteCard = e.parentElement.parentElement;
@@ -37,8 +40,8 @@ function edit(e) {
         note.innerText = textarea.value
         title.innerText = input.value
     }else{
-        textarea.value = note.innerText    
-        input.value = title.innerText    
+        textarea.value = note.innerText
+        input.value = title.innerText
     }
     e.classList.toggle('fa-edit')
     e.classList.toggle('fa-save')
